@@ -15,19 +15,18 @@ $(document).ready(function() {
 			});
     });
     
-    $("#send").click(function(event) {
+   $("#send").click(function(event) {
 
 		$.getJSON(flickerAPI, {
 		tags: $("#input").val();,
 		tagmode: "any",
 		format: "json"
-    })
-	.done(function(data) {
+    	})
+		.done(function(data) {
 			$.each(data.items, function(i, item) {
 				$("<img>").attr("src", item.media.m).appendTo("#images");
 
 			});
-    });
-    
-    
+		}); 
+   });
 });
