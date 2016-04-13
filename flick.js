@@ -18,7 +18,7 @@ $(document).ready(function() {
    $("#send").click(function(event) {
 
 		$.getJSON(flickerAPI, {
-		tags: $("#input").val();,
+		tags: $("#input").val(),
 		tagmode: "any",
 		format: "json"
     	})
