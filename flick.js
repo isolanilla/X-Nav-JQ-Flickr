@@ -13,5 +13,21 @@ $(document).ready(function() {
 				$("<img>").attr("src", item.media.m).appendTo("#images");
 
 			});
-	});
+    });
+    
+    $("#send").click(function(event) {
+
+		$.getJSON(flickerAPI, {
+		tags: $("#input").val();,
+		tagmode: "any",
+		format: "json"
+    })
+	.done(function(data) {
+			$.each(data.items, function(i, item) {
+				$("<img>").attr("src", item.media.m).appendTo("#images");
+
+			});
+    });
+    
+    
 });
