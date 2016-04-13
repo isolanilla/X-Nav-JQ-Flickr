@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
-
+	$("#images").empty();
   $.getJSON(flickerAPI, {
 		tags: "fuenlabrada",
 		tagmode: "any",
@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
     
    $("#send").click(function(event) {
-
+	$("#images").empty();
 		$.getJSON(flickerAPI, {
 		tags: $("#input").val(),
 		tagmode: "any",
